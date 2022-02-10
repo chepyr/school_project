@@ -15,4 +15,4 @@ def Barnards_star_b():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(port=8080, host='127.0.0.1')
+    app.run(host='0.0.0.0')
