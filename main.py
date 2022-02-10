@@ -3,14 +3,15 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
-@app.route('/')
-def hello():
-    return render_template("index.html")
+@app.route('/<button>')
+def hello(button):
+    return render_template("main.html", which_button=button)
 
 
-@app.route('/Barnards_star_b')
-def Barnards_star_b():
-    return render_template("Barnards_star_b.html")
+@app.route('/Barnards-star-b/<button>')
+def Barnards_star_b(button):
+    print(button)
+    return render_template("Barnards_star_b.html", which_button=button)
 
 
 if __name__ == '__main__':

@@ -26,23 +26,51 @@
 
 <nav class="navbar navbar-light bg-light fixed-top">
     <div class="container">
+        {% if which_button == "btn-r" %}
+
         <span class="navbar-brand mb-0 h3">Exoplanets</span>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarNav_r"
+                aria-controls="navbarNav_r" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" id="navbarNav_r">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Главная страница<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/btn-r">Главная страница<span
+                            class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Barnards_star_b">Звезда Барнарда b</a>
+                    <a class="nav-link" href="/Barnards-star-b/btn-r">Звезда Барнарда b</a>
                 </li>
             </ul>
         </div>
+
+        {% else %}
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarNav_l"
+                aria-controls="navbarNav_l" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand mb-0 h3">Exoplanets</a>
+        <div class="collapse navbar-collapse" id="navbarNav_l">
+            <ul class="navbar-nav navbar-left">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/btn-l">Главная страница<span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Barnards-star-b/btn-l">Звезда Барнарда b</a>
+                </li>
+            </ul>
+        </div>
+
+
+        {% endif %}
     </div>
 </nav>
+
 
 <!-- Begin page content -->
 <div class="container-fluid bg-dark text-light" style="padding-top: 60px; padding-bottom: 30px;">
