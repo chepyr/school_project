@@ -8,11 +8,11 @@ def hello():
     return render_template("index.html")
 
 
-@app.route('/two')
-def two():
-    return render_template("second.html")
+@app.route('/Barnards_star_b')
+def Barnards_star_b():
+    return render_template("Barnards_star_b.html")
 
 
 if __name__ == '__main__':
     app.debug = True
-    app.run()
+    app.run(port=8080, host='127.0.0.1')
