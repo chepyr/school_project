@@ -1,5 +1,19 @@
+::selection {
+    color: #1e2024;
+    background: #d5dee8;
+}
+
+#content{
+    min-height: 100vh;
+}
+
+.footer {
+    background: #272a2e;
+    color: #b3b3b3;
+}
+
 .navbar-right {
-text-align: right;
+    text-align: right;
 }
 
 .heading {
@@ -7,12 +21,27 @@ text-align: right;
     text-align: center;
 }
 
-.main-pic-container {
+.pic-container {
     text-align: center;
 }
 
-.exoplanet-main-picture {
+.pic-container p {
+    color: #b3b3b3;
+    margin-top: 0px;
+}
+
+.exoplanet-picture {
     border: 4px solid #4e4f52;
     border-radius: 10px;
-    margin-bottom: 20px;
+    height: auto;
+    max-width: 100%;
+}
+
+.paragraph {
+    padding-top: 20px;
+}
+
+.picture-caption {
+    color: #b3b3b3;
+    margin-top: 0px;
 }

@@ -28,7 +28,11 @@
     <div class="container">
         {% if which_button == "btn-r" %}
 
-        <span class="navbar-brand mb-0 h3">Exoplanets</span>
+        <a class="navbar-brand">
+            <img src="../static/images/rocket.svg" width="30" height="30"
+                 class="d-inline-block align-top" alt="">
+            Exoplanets
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarNav_r"
                 aria-controls="navbarNav_r" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,6 +46,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/Barnards-star-b/btn-r">Звезда Барнарда b</a>
+                    <a class="nav-link" href="/proxima-b/btn-r">Проксима Центавра b</a>
+                    <a class="nav-link" href="/TOI-700-d/btn-r">TOI-700 d</a>
+
                 </li>
             </ul>
         </div>
@@ -53,7 +60,11 @@
                 aria-controls="navbarNav_l" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand mb-0 h3">Exoplanets</a>
+        <a class="navbar-brand">
+            <img src="../static/images/rocket.svg" width="30" height="30"
+                 class="d-inline-block align-top" alt="">
+            Exoplanets
+        </a>
         <div class="collapse navbar-collapse" id="navbarNav_l">
             <ul class="navbar-nav navbar-left">
                 <li class="nav-item active">
@@ -62,6 +73,8 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/Barnards-star-b/btn-l">Звезда Барнарда b</a>
+                    <a class="nav-link" href="/proxima-b/btn-l">Проксима Центавра b</a>
+                    <a class="nav-link" href="/TOI-700-d/btn-l">TOI-700 d</a>
                 </li>
             </ul>
         </div>
@@ -73,10 +86,16 @@
 
 
 <!-- Begin page content -->
-<div class="container-fluid bg-dark text-light" style="padding-top: 60px; padding-bottom: 30px;">
+<div class="container bg-dark text-light" style="padding-top: 70px; padding-bottom: 30px;"
+     id="content">
     {% block content %}{% endblock %}
 </div>
-
-
 </body>
+
+<footer class="text-center text-muted footer">
+    <div class="text-center p-4">
+        © 2021
+    </div>
+</footer>
+
 </html>
