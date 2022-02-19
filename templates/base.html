@@ -23,10 +23,10 @@
 </head>
 <body style="background: #353a40">
 
-
+<!-- Меню справа сверху -->
+{% if which_button == "btn-r-top" %}
 <nav class="navbar navbar-light bg-light fixed-top">
     <div class="container">
-        {% if which_button == "btn-r" %}
 
         <a class="navbar-brand">
             <img src="../static/images/rocket.svg" width="30" height="30"
@@ -41,19 +41,25 @@
         <div class="collapse navbar-collapse" id="navbarNav_r">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/btn-r">Главная страница<span
+                    <a class="nav-link" href="/btn-r-top">Главная страница<span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Barnards-star-b/btn-r">Звезда Барнарда b</a>
-                    <a class="nav-link" href="/proxima-b/btn-r">Проксима Центавра b</a>
-                    <a class="nav-link" href="/TOI-700-d/btn-r">TOI-700 d</a>
-
+                    {% for current_link in links_list %}
+                    <a class="nav-link" href="/{{ current_link[0] }}/btn-r-top">
+                        {{ current_link[1] }}</a>
+                    {% endfor %}
                 </li>
             </ul>
         </div>
+    </div>
+</nav>
 
-        {% else %}
+<!-- Меню слева сверху -->
+{% elif which_button == "btn-l-top" %}
+
+<nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container">
 
         <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarNav_l"
@@ -68,25 +74,103 @@
         <div class="collapse navbar-collapse" id="navbarNav_l">
             <ul class="navbar-nav navbar-left">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/btn-l">Главная страница<span
+                    <a class="nav-link" href="/btn-l-top">Главная страница<span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Barnards-star-b/btn-l">Звезда Барнарда b</a>
-                    <a class="nav-link" href="/proxima-b/btn-l">Проксима Центавра b</a>
-                    <a class="nav-link" href="/TOI-700-d/btn-l">TOI-700 d</a>
+                    {% for current_link in links_list %}
+                    <a class="nav-link" href="/{{ current_link[0] }}/btn-l-top">
+                        {{ current_link[1] }}</a>
+                    {% endfor %}
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Меню слева снизу -->
+{% elif which_button == "btn-l-btm" %}
+
+<nav class="navbar navbar-light bg-light fixed-bottom">
+    <div class="container">
+
+        <div class="collapse navbar-collapse" id="navbarToggleExternalContent_l_btm">
+            <ul class="navbar-nav navbar-left">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/btn-l-btm">Главная страница<span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    {% for current_link in links_list %}
+                    <a class="nav-link" href="/{{ current_link[0] }}/btn-l-btm">
+                        {{ current_link[1] }}</a>
+                    {% endfor %}
                 </li>
             </ul>
         </div>
 
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarToggleExternalContent_l_btm"
+                aria-controls="navbarToggleExternalContent_l_btm"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand">
+            <img src="../static/images/rocket.svg" width="30" height="30"
+                 class="d-inline-block align-top" alt="">
+            Exoplanets
+        </a>
 
-        {% endif %}
     </div>
 </nav>
 
+<!-- Меню справа снизу -->
+{% else %}
+
+<nav class="navbar navbar-light bg-light fixed-bottom">
+    <div class="container">
+
+        <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+
+            <ul class="navbar-nav navbar-right">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/btn-r-btm">Главная страница<span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    {% for current_link in links_list %}
+                    <a class="nav-link" href="/{{ current_link[0] }}/btn-r-btm">
+                        {{ current_link[1] }}</a>
+                    {% endfor %}
+                </li>
+            </ul>
+        </div>
+
+        <a class="navbar-brand">
+            <img src="../static/images/rocket.svg" width="30" height="30"
+                 class="d-inline-block align-top" alt="">
+            Exoplanets
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarToggleExternalContent"
+                aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+    </div>
+</nav>
+
+{% endif %}
+
+{% if which_button == "btn-l-btm" or which_button == "btn-r-btm" %}
+{% set top_padding = "10" %}
+{% else %}
+{% set top_padding = "70" %}
+{% endif %}
 
 <!-- Begin page content -->
-<div class="container bg-dark text-light" style="padding-top: 70px; padding-bottom: 30px;"
+<div class="container bg-dark text-light" style="padding-top: {{ top_padding }}px; padding-bottom: 30px;"
      id="content">
     {% block content %}{% endblock %}
 </div>

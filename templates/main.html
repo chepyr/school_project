@@ -8,12 +8,30 @@
 
 <h3 class="heading">Главная страница</h3>
 
-<div class="links-for-diff-btns">
+<div class="links-for-diff-btns text-center">
     <h6>Ссылки на страницы, где кнопка меню: </h6>
-    <div class="list-group">
-        <a href="/btn-l" class="list-group-item list-group-item-action">слева</a>
-        <a href="/btn-r" class="list-group-item list-group-item-action">справа</a>
-    </div>
+
+    <table class="table table-bordered">
+        <tbody>
+        <tr>
+            <td>
+                <a href="/btn-l-top" class="list-group-item list-group-item-action">слева сверху</a>
+            </td>
+            <td>
+                <a href="/btn-r-top" class="list-group-item list-group-item-action">справа
+                    сверху</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="/btn-l-btm" class="list-group-item list-group-item-action">слева снизу</a>
+            </td>
+            <td>
+                <a href="/btn-r-btm" class="list-group-item list-group-item-action">справа снизу</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 
 {% endblock %}
